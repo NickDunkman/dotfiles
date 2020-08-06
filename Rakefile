@@ -24,6 +24,9 @@ end
 
 desc "Hook our dotfiles into system-standard positions."
 task :install do
+  # run all install.sh files
+  `find . -name install.sh | while read installer ; do sh -c "${installer}" ; done`
+
   unless File.exists?("git/gitconfig.local.symlink")
     puts "What is your github author name?"
     git_authorname = STDIN.gets.chomp
