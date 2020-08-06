@@ -15,9 +15,10 @@ if ! zgen saved; then
   zgen save
 fi
 
-# grab all .zsh files
+# grab all .zsh files (not in the zgen directory)
+setopt EXTENDED_GLOB
 typeset -U config_files
-config_files=($DOTFILES/**/*.zsh)
+config_files=($DOTFILES/(^zgen/)#*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
