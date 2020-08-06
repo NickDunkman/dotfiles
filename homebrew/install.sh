@@ -17,9 +17,4 @@ brew install git autojump grc coreutils
 brew tap homebrew/cask-fonts
 brew cask install font-meslo-for-powerline
 
-if ! [ -d /Applications/iTerm.app ]
-then
-  brew cask install iterm2
-fi
-
 exit 0
