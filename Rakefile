@@ -1,22 +1,5 @@
 require 'rake'
 
-class Array
-  def not_contain(other_arr)
-    unless other_arr.is_a? Array
-      raise ArgumentError, "The argument must be an array"
-    end
-    
-    select { |s| !other_arr.any? { |o| s[o] } }
-  end
-  def contain(other_arr)
-    unless other_arr.is_a? Array
-      raise ArgumentError, "The argument must be an array"
-    end
-    
-    select { |s| other_arr.any? { |o| s[o] } }
-  end
-end
-
 desc "Run install.sh files"
 task :installers do
   Dir.glob('**/install.sh').each do |installer|
