@@ -47,8 +47,14 @@ task :install do
 
     file = File.basename(linkable).split('.')[0...-1].join('.')
     target = "#{ENV["HOME"]}/.#{file}"
+    source = `echo "$PWD/#{linkable}"`
 
-    if File.exists?(target) || File.symlink?(target)
+    already_has_correct_linkage = false
+    if File.symlink?(target)
+      already_has_correct_linkage = source == `readlink #{target}`
+    end
+
+    if !already_has_correct_linkage && (File.exists?(target) || File.symlink?(target))
       unless skip_all || overwrite_all || backup_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
@@ -62,7 +68,10 @@ task :install do
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
     end
-    `ln -s "$PWD/#{linkable}" "#{target}"`
+
+    unless already_has_correct_linkage
+      `ln -s "#{source}" "#{target}"`
+    end
   end
 end
 
