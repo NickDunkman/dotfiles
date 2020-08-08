@@ -1,0 +1,11 @@
+[alias]
+    b = branch
+    co = checkout
+    commit-tree = commit-tree -S
+[core]
+    pager = less -F -X
+[mailmap]
+    file = ~/.mailmap
+[user]
+    name = Nick Dunkman
+    email = nickdunkman@gmail.com
