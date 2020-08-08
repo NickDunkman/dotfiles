@@ -25,25 +25,16 @@ end
 desc "Hook our dotfiles into system-standard positions."
 task :install do
   # run all install.sh files
-  `find . -name install.sh | while read installer ; do sh -c "${installer}" ; done`
-
-  unless File.exists?("git/gitconfig.local.symlink")
-    puts "What is your github author name?"
-    git_authorname = STDIN.gets.chomp
-
-    puts "What is your github author email?"
-    git_authoremail = STDIN.gets.chomp
-
-    `sed -e "s/AUTHORNAME/#{git_authorname}/g" -e "s/AUTHOREMAIL/#{git_authoremail}/g" git/gitconfig.local.symlink.template > git/gitconfig.local.symlink`
+  Dir.glob('**/install.sh').each do |installer|
+    puts "running #{installer} ..."
+    system("sh -c #{installer}")
   end
 
-  linkables = Dir.glob('*/**{.symlink}')
-
+  # copy .symlink files into home directory
   skip_all = false
   overwrite_all = false
   backup_all = false
-
-  linkables.each do |linkable|
+  Dir.glob('*/**{.symlink}').each do |linkable|
     overwrite = false
     backup = false
 
