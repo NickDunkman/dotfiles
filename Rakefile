@@ -17,27 +17,25 @@ class Array
   end
 end
 
-task :test do
-  nickyd = 
-  puts nickyd
-end
-
-desc "Hook our dotfiles into system-standard positions."
-task :install do
-  # run all install.sh files
+desc "Run install.sh files"
+task :installers do
   Dir.glob('**/install.sh').each do |installer|
     puts "running #{installer} ..."
     system("sh -c #{installer}")
   end
+end
 
-  # Set Mac OS preferences
+desc "Set Mac OS preferences"
+task :preferences do
   puts "Setting Mac OS preferences ..."
   Dir.glob('**/defaults.sh').each do |defaulter|
     puts "    #{defaulter}"
     system("sh -c #{defaulter}")
   end
+end
 
-  # copy .symlink files into home directory
+desc "Link dotfiles into the home directory"
+task :symlinks do
   skip_all = false
   overwrite_all = false
   backup_all = false
@@ -75,4 +73,4 @@ task :install do
   end
 end
 
-task :default => 'install'
+task :default => ["installers", "preferences", "symlinks"]
