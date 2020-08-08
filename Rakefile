@@ -30,6 +30,13 @@ task :install do
     system("sh -c #{installer}")
   end
 
+  # Set Mac OS preferences
+  puts "Setting Mac OS preferences ..."
+  Dir.glob('**/defaults.sh').each do |defaulter|
+    puts "    #{defaulter}"
+    system("sh -c #{defaulter}")
+  end
+
   # copy .symlink files into home directory
   skip_all = false
   overwrite_all = false
