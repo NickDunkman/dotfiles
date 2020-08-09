@@ -1304,9 +1304,11 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>3440 839 799 448 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>711 418 1250 999 0 0 2560 1417 </string>
+	<string>2882 317 1050 787 2560 113 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2903 294 570 452 2560 113 2560 1417 </string>
+	<string>772 277 1050 764 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>193 306 1050 787 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1576,7 +1578,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>130</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -1977,9 +1979,9 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>40</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
 			<key>Selected Text Color</key>
@@ -2037,7 +2039,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.01</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2060,12 +2062,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{582, 1378}</string>
+		<string>{36, 1267}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>E418E458-9758-497D-B973-E3857F764F28</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>8</integer>
+	<integer>9</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>618625356.09737301</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
