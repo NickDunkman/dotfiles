@@ -1,5 +1,7 @@
 {
     "workbench.colorTheme": "Monokai One Dark Vivid",
     "editor.fontSize": 14,
-    "editor.fontFamily": "Consolas,  Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontFamily": "Consolas,  Menlo, Monaco, 'Courier New', monospace",
+    "files.autoSave": "onFocusChange",
+    "editor.copyWithSyntaxHighlighting": false
 }
