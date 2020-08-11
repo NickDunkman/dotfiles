@@ -6,6 +6,7 @@ ln -s $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/se
 # Can generate this list using:
 #   code --list-extensions | xargs -L 1 echo code --install-extension
 
+code --install-extension ashpowell.monokai-one-dark-vivid
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension dotiful.dotfiles-syntax-highlighting
@@ -21,5 +22,6 @@ code --install-extension redhat.vscode-yaml
 code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension SonarSource.sonarlint-vscode
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension vscodevim.vim
 code --install-extension waderyan.gitblame
 code --install-extension yzhang.markdown-all-in-one
