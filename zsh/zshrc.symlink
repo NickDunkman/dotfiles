@@ -8,6 +8,8 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/vscode
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/docker-compose
   zgen load unixorn/autoupdate-zgen
   zgen load romkatv/powerlevel10k powerlevel10k
 
