@@ -3,5 +3,12 @@
     "editor.fontSize": 14,
     "editor.fontFamily": "Consolas,  Menlo, Monaco, 'Courier New', monospace",
     "files.autoSave": "onFocusChange",
-    "editor.copyWithSyntaxHighlighting": false
+    "editor.copyWithSyntaxHighlighting": false,
+    "vim.hlsearch": true,
+    "files.exclude": {
+        "**/*.pyc": true
+    },
+    "editor.minimap.enabled": false,
+    "sonarlint.ls.javaHome": "/Users/nick/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.8+10-jre/Contents/Home",
+    "explorer.openEditors.visible": 0
 }
