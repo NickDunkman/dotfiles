@@ -1,5 +1,8 @@
-# homebrew installs in /usr/local/bin
-export PATH=/usr/local/bin:$PATH
-
-# add in /bin stuff from this repo
-export PATH=$DOTFILES/bin:$PATH
+export PATH="$DOTFILES/bin\
+:$HOME/.pyenv/bin\
+:$HOME/.poetry/bin\
+:/usr/local/bin\
+:/usr/bin\
+:/bin\
+:/usr/sbin\
+:/sbin"
