@@ -9,3 +9,5 @@
 [user]
     name = Nick Dunkman
     email = nickdunkman@gmail.com
+[pull]
+    ff = only
