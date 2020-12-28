@@ -10,5 +10,6 @@
     },
     "editor.minimap.enabled": false,
     "sonarlint.ls.javaHome": "/Users/nick/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.8+10-jre/Contents/Home",
-    "explorer.openEditors.visible": 0
+    "explorer.openEditors.visible": 0,
+    "javascript.validate.enable": false
 }
