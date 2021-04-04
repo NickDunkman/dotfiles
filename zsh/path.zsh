@@ -3,6 +3,7 @@ paths=(
   $DOTFILES/bin
   $HOME/.pyenv/bin
   $HOME/.poetry/bin
+  $HOME/.cargo/bin
   /usr/local/bin
   /usr/bin
   /bin
