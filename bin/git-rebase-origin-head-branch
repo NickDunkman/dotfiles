@@ -56,4 +56,4 @@ if [ $? -ne 0 ]; then
     fatal_error "you have uncommitted changes, aborting"
 fi
 
-git rebase origin/$head_branch
+git rebase --rebase-merges origin/$head_branch
