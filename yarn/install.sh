@@ -1,3 +1,14 @@
 #!/bin/sh
 
-yarn global add eslint@4.13.1 eslint-plugin-import@2.8.0 eslint-plugin-react@7.7.0 eslint-plugin-jsx-a11y@6.0.3 eslint-plugin-flowtype@2.40.1 eslint-config-airbnb@16.1.0 eslint-config-airbnb-base@12.1.0 babel-eslint@8.0.3 eslint-config-prettier@2.9.0 eslint-plugin-prettier@2.6.0 prettier@1.11.1 eslint-plugin-react-hooks@1.6.1
+yarn global add eslint@7.21.0
+yarn global add eslint-plugin-import@2.22.1
+yarn global add eslint-plugin-react@7.22.0
+yarn global add eslint-plugin-jsx-a11y@6.4.1
+yarn global add eslint-plugin-flowtype@2.40.1
+yarn global add eslint-config-airbnb@18.2.1
+yarn global add eslint-config-airbnb-base@14.2.1
+yarn global add babel-eslint@10.1.0
+yarn global add eslint-config-prettier@2.9.0
+yarn global add eslint-plugin-prettier@3.3.1
+yarn global add prettier@2.2.1
+yarn global add eslint-plugin-react-hooks@4.2.0
