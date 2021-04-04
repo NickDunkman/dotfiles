@@ -239,7 +239,7 @@ fi
 
 printf "\nLooking for orphaned .pyc files ... "
 deletions=false
-find . -name "*.pyc" -o -name "*.py" -type f > /tmp/git_cleanup_output 2>&1
+find . \( -name "*.pyc" -o -name "*.py" -type f \) -and \( -not -path "*/.venv/*" \) > /tmp/git_cleanup_output 2>&1
 while read line
 do
     # For all the .pyc files we found, check if there are zero matching .py files. If so, remove
