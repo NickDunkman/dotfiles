@@ -4,6 +4,8 @@ paths=(
   $HOME/.pyenv/bin
   $HOME/.poetry/bin
   $HOME/.cargo/bin
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
   /usr/local/bin
   /usr/bin
   /bin
