@@ -1,5 +1,7 @@
 export DOTFILES=$HOME/Code/NickDunkman/dotfiles
 
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 # source zgen
 source $DOTFILES/zgen/zgen.zsh
 if ! zgen saved; then
