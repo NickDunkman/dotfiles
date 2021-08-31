@@ -14,5 +14,10 @@
     "explorer.openEditors.visible": 0,
     "javascript.validate.enable": false,
     "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-    "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    }
 }
