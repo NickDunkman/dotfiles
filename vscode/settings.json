@@ -19,5 +19,7 @@
     },
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
-    }
+    },
+    "editor.guides.bracketPairs": "active",
+    "editor.bracketPairColorization.enabled": true
 }
