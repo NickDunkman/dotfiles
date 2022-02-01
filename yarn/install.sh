@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if test ! $(which yarn)
+then
+  npm install --global corepack
+fi
+
 yarn global add eslint@7.21.0
 yarn global add eslint-plugin-import@2.22.1
 yarn global add eslint-plugin-react@7.22.0
