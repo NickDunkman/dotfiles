@@ -21,5 +21,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "editor.guides.bracketPairs": "active",
-    "editor.bracketPairColorization.enabled": true
+    "editor.bracketPairColorization.enabled": true,
+    "explorer.autoReveal": false
 }
