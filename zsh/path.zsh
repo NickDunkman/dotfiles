@@ -1,6 +1,7 @@
 # Highest precedence first
 paths=(
   $DOTFILES/bin
+  $HOME/.yarn/bin
   $HOME/.pyenv/shims
   $HOME/.pyenv/bin
   $HOME/.poetry/bin
