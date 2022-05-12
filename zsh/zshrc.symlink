@@ -2,27 +2,10 @@ export DOTFILES=$HOME/Code/NickDunkman/dotfiles
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
-# source zgen
-source $DOTFILES/zgen/zgen.zsh
-if ! zgen saved; then
-  # specify plugins here
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/autojump
-  zgen oh-my-zsh plugins/vscode
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen load unixorn/autoupdate-zgen
-  zgen load romkatv/powerlevel10k powerlevel10k
-
-  # generate the init script from plugins above
-  zgen save
-fi
-
-# grab all .zsh files (not in the zgen directory)
+# grab all .zsh files
 setopt EXTENDED_GLOB
 typeset -U config_files
-config_files=($DOTFILES/(^zgen/)#*.zsh)
+config_files=($DOTFILES/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -36,11 +19,9 @@ do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
+# initalize autocomplete and then load every completion.zsh
 autoload -U compinit
 compinit
-
-# load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
 do
   source $file
