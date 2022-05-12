@@ -1,29 +1,30 @@
 {
-    "workbench.colorTheme": "Monokai One Dark Vivid",
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Consolas,  Menlo, Monaco, 'Courier New', monospace",
-    "files.autoSave": "onFocusChange",
-    "editor.copyWithSyntaxHighlighting": false,
-    "editor.formatOnSave": true,
-    "vim.hlsearch": true,
-    "files.exclude": {
-        "**/*.pyc": true
-    },
-    "editor.minimap.enabled": false,
-    "sonarlint.ls.javaHome": "/Users/nick/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.8+10-jre/Contents/Home",
-    "explorer.openEditors.visible": 0,
-    "javascript.validate.enable": false,
-    "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "editor.guides.bracketPairs": "active",
-    "editor.bracketPairColorization.enabled": true,
-    "explorer.autoReveal": false,
-    "editor.unicodeHighlight.allowedCharacters": {
-        "’": true
-    }
+  "workbench.colorTheme": "Monokai One Dark Vivid",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas,  Menlo, Monaco, 'Courier New', monospace",
+  "files.autoSave": "onFocusChange",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.formatOnSave": true,
+  "vim.hlsearch": true,
+  "files.exclude": {
+    "**/*.pyc": true
+  },
+  "editor.minimap.enabled": false,
+  "sonarlint.ls.javaHome": "/Users/nick/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.8+10-jre/Contents/Home",
+  "explorer.openEditors.visible": 0,
+  "javascript.validate.enable": false,
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.guides.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  "explorer.autoReveal": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "’": true
+  },
+  "gitlens.codeLens.enabled": false
 }
