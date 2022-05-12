@@ -1,5 +1,3 @@
-#!/bin/sh
-
 rm ~/Library/Application\ Support/Code/User/settings.json 2> /dev/null
 ln -s $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json 2> /dev/null
 

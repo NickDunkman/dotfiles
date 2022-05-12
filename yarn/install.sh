@@ -1,7 +1,4 @@
-#!/bin/sh
-
-if test ! $(which yarn)
-then
+if ! type "yarn" > /dev/null; then
   npm install --global corepack
 fi
 
