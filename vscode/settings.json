@@ -13,9 +13,12 @@
   "sonarlint.ls.javaHome": "/Users/nick/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.8+10-jre/Contents/Home",
   "explorer.openEditors.visible": 0,
   "javascript.validate.enable": false,
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[typescript][typescriptreact][scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80]
+  },
+  "[python]": {
+    "editor.rulers": [100]
   },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
