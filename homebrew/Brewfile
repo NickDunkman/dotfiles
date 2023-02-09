@@ -27,7 +27,7 @@ cask "visual-studio-code"
 mas "Divvy", id: 413857545
 mas "Drafts", id: 1435957248
 mas "Gifox", id: 1461845568
-mas "OpenIn - Advanced Link Handler", id: 1547147101
+mas "OpenIn 4 Advanced Link Handler", id: 1643649331
 mas "Paste", id: 967805235
 mas "Speedtest", id: 1153157709
 mas "Transmit", id: 1436522307
