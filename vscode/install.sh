@@ -4,22 +4,22 @@ ln -s $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/se
 # Can generate this list using:
 #   code --list-extensions | xargs -L 1 echo code --install-extension
 
-code --install-extension ashpowell.monokai-one-dark-vivid
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension dotiful.dotfiles-syntax-highlighting
-code --install-extension DotJoshJohnson.xml
-code --install-extension eamodio.gitlens
-code --install-extension eriklynd.json-tools
-code --install-extension esbenp.prettier-vscode
-code --install-extension mechatroner.rainbow-csv
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension oderwat.indent-rainbow
-code --install-extension redhat.vscode-yaml
-code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension silvenon.mdx
-code --install-extension stylelint.vscode-stylelint
-code --install-extension vscodevim.vim
-code --install-extension waderyan.gitblame
-code --install-extension yzhang.markdown-all-in-one
+code --install-extension ashpowell.monokai-one-dark-vivid --force
+code --install-extension dbaeumer.vscode-eslint --force
+code --install-extension dotiful.dotfiles-syntax-highlighting --force
+code --install-extension DotJoshJohnson.xml --force
+code --install-extension eamodio.gitlens --force
+code --install-extension eriklynd.json-tools --force
+code --install-extension esbenp.prettier-vscode --force
+code --install-extension mechatroner.rainbow-csv --force
+code --install-extension ms-azuretools.vscode-docker --force
+code --install-extension ms-python.python --force
+code --install-extension ms-python.vscode-pylance --force
+code --install-extension oderwat.indent-rainbow --force
+code --install-extension redhat.vscode-yaml --force
+code --install-extension shd101wyy.markdown-preview-enhanced --force
+code --install-extension silvenon.mdx --force
+code --install-extension stylelint.vscode-stylelint --force
+code --install-extension vscodevim.vim --force
+code --install-extension waderyan.gitblame --force
+code --install-extension yzhang.markdown-all-in-one --force
