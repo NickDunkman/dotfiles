@@ -18,7 +18,7 @@ code --install-extension ms-python.vscode-pylance --force
 code --install-extension oderwat.indent-rainbow --force
 code --install-extension redhat.vscode-yaml --force
 code --install-extension shd101wyy.markdown-preview-enhanced --force
-code --install-extension silvenon.mdx --force
+code --install-extension unifiedjs.vscode-mdx --force
 code --install-extension stylelint.vscode-stylelint --force
 code --install-extension vscodevim.vim --force
 code --install-extension waderyan.gitblame --force
