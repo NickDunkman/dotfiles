@@ -34,5 +34,7 @@
   "editor.unicodeHighlight.allowedCharacters": {
     "’": true
   },
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "http.systemCertificates": false,
+  "http.proxyStrictSSL": false
 }
