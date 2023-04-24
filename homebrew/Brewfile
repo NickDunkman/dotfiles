@@ -19,6 +19,7 @@ brew "postgresql@14"
 brew "pyenv"
 brew "zplug"
 cask "alfred"
+cask "divvy"
 cask "docker"
 cask "figma"
 cask "font-meslo-for-powerline"
@@ -28,7 +29,6 @@ cask "notion"
 cask "slack"
 cask "sourcetree"
 cask "visual-studio-code"
-mas "Divvy", id: 413857545
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
 mas "Speedtest", id: 1153157709
