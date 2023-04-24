@@ -28,6 +28,7 @@ cask "linear-linear"
 cask "notion"
 cask "slack"
 cask "sourcetree"
+cask "spotify"
 cask "visual-studio-code"
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
