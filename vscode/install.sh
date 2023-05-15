@@ -15,6 +15,7 @@ code \
     --install-extension mechatroner.rainbow-csv --force \
     --install-extension ms-azuretools.vscode-docker --force \
     --install-extension ms-python.python --force \
+    --install-extension ms-python.isort --force \
     --install-extension ms-python.vscode-pylance --force \
     --install-extension oderwat.indent-rainbow --force \
     --install-extension redhat.vscode-yaml --force \
