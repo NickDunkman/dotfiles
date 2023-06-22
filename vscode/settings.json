@@ -36,5 +36,8 @@
   },
   "gitlens.codeLens.enabled": false,
   "http.systemCertificates": false,
-  "http.proxyStrictSSL": false
+  "http.proxyStrictSSL": false,
+  "vim.leader": ",",
+  "explorer.confirmDelete": false,
+  "dynoFileUtils.confirmDelete": false
 }

@@ -9,6 +9,7 @@ code \
     --install-extension dbaeumer.vscode-eslint --force \
     --install-extension dotiful.dotfiles-syntax-highlighting --force \
     --install-extension DotJoshJohnson.xml --force \
+    --install-extension dyno-nguyen.vscode-dynofileutils --force \
     --install-extension eamodio.gitlens --force \
     --install-extension eriklynd.json-tools --force \
     --install-extension esbenp.prettier-vscode --force \
