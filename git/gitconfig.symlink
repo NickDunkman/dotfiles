@@ -10,6 +10,7 @@
 [user]
 	name = Nick Dunkman
 	email = nickdunkman@gmail.com
+	signingkey = CB191FD9344295F8
 [pull]
 	ff = only
 [difftool "sourcetree"]
@@ -20,3 +21,4 @@
 	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg
+	gpgsign = true
