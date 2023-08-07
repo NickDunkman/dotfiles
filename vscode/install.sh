@@ -18,6 +18,7 @@ code \
     --install-extension ms-python.python --force \
     --install-extension ms-python.isort --force \
     --install-extension ms-python.vscode-pylance --force \
+    --install-extension ms-vscode-remote.remote-containers --force \
     --install-extension oderwat.indent-rainbow --force \
     --install-extension redhat.vscode-yaml --force \
     --install-extension shd101wyy.markdown-preview-enhanced --force \
