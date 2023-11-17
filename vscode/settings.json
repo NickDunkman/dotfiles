@@ -15,15 +15,12 @@
   "javascript.validate.enable": false,
   "[typescript][typescriptreact][scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [
-      80
-    ]
+    "editor.rulers": [80]
   },
   "[python]": {
-    "editor.rulers": [
-      100
-    ],
-    "editor.formatOnType": true
+    "editor.rulers": [100],
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
