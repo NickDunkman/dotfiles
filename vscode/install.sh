@@ -13,6 +13,7 @@ code \
     --install-extension eamodio.gitlens --force \
     --install-extension eriklynd.json-tools --force \
     --install-extension esbenp.prettier-vscode --force \
+    --install-extension GitHub.copilot --force \
     --install-extension johnpapa.vscode-peacock --force \
     --install-extension mechatroner.rainbow-csv --force \
     --install-extension ms-azuretools.vscode-docker --force \
