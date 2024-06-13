@@ -36,5 +36,6 @@
   "http.proxyStrictSSL": false,
   "vim.leader": ",",
   "explorer.confirmDelete": false,
-  "dynoFileUtils.confirmDelete": false
+  "dynoFileUtils.confirmDelete": false,
+  "github.copilot.editor.enableAutoCompletions": true
 }
