@@ -10,14 +10,14 @@
 [user]
 	name = Nick Dunkman
 	email = nickdunkman@gmail.com
-	signingkey = CB191FD9344295F8
+	signingkey = 22D6BCECAC6A2F04
 [pull]
 	ff = only
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = ~/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg
