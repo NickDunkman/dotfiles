@@ -1,7 +1,4 @@
-cask_args appdir: "~/Applications"
-
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "phrase/brewed"
 brew "autojump"
 brew "coreutils"
@@ -17,9 +14,13 @@ brew "postgresql@14"
 brew "pyenv"
 brew "zplug"
 cask "alfred"
+cask "claude"
+cask "deepl"
 cask "divvy"
 cask "docker"
 cask "figma"
+cask "firefox@developer-edition"
+cask "font-meslo-for-powerlevel10k"
 cask "font-meslo-for-powerline"
 cask "gpg-suite"
 cask "iterm2"
@@ -30,7 +31,9 @@ cask "slack"
 cask "sourcetree"
 cask "spotify"
 cask "visual-studio-code"
+cask "zoom"
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
 mas "Speedtest", id: 1153157709
 mas "Transmit", id: 1436522307
+mas "WhatsApp Messenger", id: 310633997
