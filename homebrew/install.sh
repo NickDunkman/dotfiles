@@ -3,5 +3,5 @@ if ! type "brew" > /dev/null; then
 fi
 
 brew update
-brew bundle --file=$DOTFILES/homebrew/Brewfile --no-lock
+brew bundle --file=$DOTFILES/homebrew/Brewfile
 brew upgrade
