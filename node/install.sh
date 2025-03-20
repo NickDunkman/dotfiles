@@ -9,9 +9,7 @@ fi
 # Install/update Node & NPM
 nvm install --lts
 
-# Install yarn
-if ! type "yarn" > /dev/null; then
-  npm install --global corepack
-else
-  npm upgrade --global corepack
-fi
+# corepack includes yarn!
+# to add more global installs, just tack onto the following line
+npm install --global corepack
+npm update --global
