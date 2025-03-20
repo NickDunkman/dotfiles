@@ -7,6 +7,7 @@ paths=(
   $HOME/.poetry/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
+  /opt/homebrew/opt/postgresql@15/bin
   /opt/homebrew/bin
   /opt/homebrew/sbin
   /usr/local/bin
