@@ -9,7 +9,6 @@ code \
     --install-extension dbaeumer.vscode-eslint --force \
     --install-extension dotiful.dotfiles-syntax-highlighting --force \
     --install-extension DotJoshJohnson.xml --force \
-    --install-extension dyno-nguyen.vscode-dynofileutils --force \
     --install-extension eamodio.gitlens --force \
     --install-extension eriklynd.json-tools --force \
     --install-extension esbenp.prettier-vscode --force \
@@ -17,10 +16,6 @@ code \
     --install-extension johnpapa.vscode-peacock --force \
     --install-extension mechatroner.rainbow-csv --force \
     --install-extension ms-azuretools.vscode-docker --force \
-    --install-extension ms-python.python --force \
-    --install-extension ms-python.isort --force \
-    --install-extension ms-python.vscode-pylance --force \
-    --install-extension ms-vscode-remote.remote-containers --force \
     --install-extension oderwat.indent-rainbow --force \
     --install-extension redhat.vscode-yaml --force \
     --install-extension shd101wyy.markdown-preview-enhanced --force \
