@@ -1,9 +1,9 @@
-# Cursor uses the same settings as VSCode
+# Install user settings file
 rm ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
-ln -s $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
+ln -s $DOTFILES/cursor/settings.json ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
 
 # Can generate this list using:
-#   code --list-extensions | xargs -L 1 echo code --install-extension
+#   cursor --list-extensions | xargs -L 1 echo cursor --install-extension
 
 # This isn't fully supported yet! Should probably sync this with vscode/install.sh
 # cursor \

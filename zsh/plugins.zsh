@@ -4,7 +4,7 @@ source $(brew --prefix)/opt/zplug/init.zsh
 # my plugin definitions
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
-zplug "plugins/vscode", from:oh-my-zsh
+# zplug "plugins/vscode", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "romkatv/powerlevel10k", use:powerlevel10k.zsh-theme

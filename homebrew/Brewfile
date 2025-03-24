@@ -37,7 +37,6 @@ cask "kap"
 cask "slack"
 cask "sourcetree"
 cask "spotify"
-cask "visual-studio-code"
 cask "zoom"
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
