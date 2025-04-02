@@ -27,12 +27,12 @@ task :symlinks do
     backup = false
 
     file = File.basename(linkable).split('.')[0...-1].join('.')
-    target = "#{ENV["HOME"]}/.#{file}"
-    source = `echo "$PWD/#{linkable}"`
+    target = "#{ENV["HOME"]}/.#{file}".strip
+    source = `echo "$PWD/#{linkable}"`.strip
 
     already_has_correct_linkage = false
     if File.symlink?(target)
-      already_has_correct_linkage = source == `readlink #{target}`
+      already_has_correct_linkage = source == `readlink #{target}`.strip
     end
 
     if !already_has_correct_linkage && (File.exists?(target) || File.symlink?(target))
