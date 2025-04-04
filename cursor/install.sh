@@ -8,6 +8,7 @@ ln -s $DOTFILES/cursor/settings.json ~/Library/Application\ Support/Cursor/User/
 # This isn't fully supported yet! Should probably sync this with vscode/install.sh
 # cursor \
 #     --install-extension ashpowell.monokai-one-dark-vivid --force \
+#     --install-extension bradlc.vscode-tailwindcss --force
 #     --install-extension dbaeumer.vscode-eslint --force \
 #     --install-extension dotiful.dotfiles-syntax-highlighting --force \
 #     --install-extension DotJoshJohnson.xml --force \
