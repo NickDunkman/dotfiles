@@ -19,6 +19,7 @@ brew "zplug"
 cask "1password"
 cask "1password-cli"
 cask "alfred"
+cask "anki"
 cask "bluesnooze"
 cask "chatgpt"
 cask "claude"
@@ -42,6 +43,8 @@ cask "sketch"
 cask "sourcetree"
 cask "spotify"
 cask "zoom"
+# Some issue w/ ColorSlurp on mas -- might be fixed w/ CS v4?
+# mas "ColorSlurp", id: 1287239339
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
 mas "Speedtest", id: 1153157709
