@@ -42,6 +42,7 @@ cask "slack"
 cask "sketch"
 cask "sourcetree"
 cask "spotify"
+cask "visual-studio-code"
 cask "zoom"
 # Some issue w/ ColorSlurp on mas -- might be fixed w/ CS v4?
 # mas "ColorSlurp", id: 1287239339
