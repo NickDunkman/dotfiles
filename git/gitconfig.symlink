@@ -10,7 +10,7 @@
 [user]
 	name = Nick Dunkman
 	email = nickdunkman@gmail.com
-	signingkey = 3BB05E7F2173B7E2
+	signingkey = 6E98D8371DDEC882
 [pull]
 	ff = only
 [difftool "sourcetree"]
