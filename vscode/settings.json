@@ -24,5 +24,6 @@
   "http.systemCertificates": false,
   "http.proxyStrictSSL": false,
   "vim.leader": ",",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.editor.empty.hint": "hidden"
 }

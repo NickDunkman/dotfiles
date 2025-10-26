@@ -1,6 +1,6 @@
 # Install user settings file
 rm ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
-ln -s $DOTFILES/cursor/settings.json ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
+ln -s $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Cursor/User/settings.json 2> /dev/null
 
 # Can generate this list using:
 #   cursor --list-extensions | xargs -L 1 echo cursor --install-extension
