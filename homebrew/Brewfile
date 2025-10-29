@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 tap "phrase/brewed"
-tap "supabase/tap"
 brew "autojump"
 brew "awscli"
 brew "coreutils"
