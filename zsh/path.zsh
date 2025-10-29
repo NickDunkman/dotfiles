@@ -1,6 +1,7 @@
 # Highest precedence first
 paths=(
   $DOTFILES/bin
+  $FNM_MULTISHELL_PATH/bin
   $HOME/.yarn/bin
   $HOME/.pyenv/shims
   $HOME/.pyenv/bin

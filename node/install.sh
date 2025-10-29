@@ -1,13 +1,10 @@
-# Install NVM first, to manage one or more installations of node/npm/etc
-if [ ! -d ~/.nvm ]; then
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+# Install FNM (Fast Node Manager) to manage one or more installations of node/npm/etc
+if [ ! -d /opt/homebrew/opt/fnm/bin ]; then
+  curl -fsSL https://fnm.vercel.app/install | bash
 fi
 
-# Activate NVM
-. ~/.nvm/nvm.sh
-
 # Install/update Node & NPM
-nvm install --lts
+fnm install --lts
 
 # corepack includes yarn!
 # to add more global installs, just tack onto the following line
