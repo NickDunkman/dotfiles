@@ -44,8 +44,7 @@ cask "sourcetree"
 cask "spotify"
 cask "visual-studio-code"
 cask "zoom"
-# Some issue w/ ColorSlurp on mas -- might be fixed w/ CS v4?
-# mas "ColorSlurp", id: 1287239339
+mas "ColorSlurp", id: 1287239339
 mas "Drafts", id: 1435957248
 mas "OpenIn 4 Advanced Link Handler", id: 1643649331
 mas "Speedtest", id: 1153157709
