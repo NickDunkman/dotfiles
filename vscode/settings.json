@@ -27,5 +27,6 @@
   "explorer.confirmDelete": false,
   "workbench.editor.empty.hint": "hidden",
   "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1"
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
