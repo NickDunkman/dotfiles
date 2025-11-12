@@ -5,3 +5,4 @@ fi
 brew update
 brew bundle --file=$DOTFILES/homebrew/Brewfile
 brew upgrade
+mas upgrade
