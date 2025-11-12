@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "phrase/brewed"
 brew "autojump"
 brew "awscli"
