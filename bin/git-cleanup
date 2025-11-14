@@ -201,7 +201,7 @@ while read line
 do
     is_real_branch=`git show-ref refs/heads/$line`
     if [ -n "$is_real_branch" ] && [[ $line != $merge_branch ]] && [[ $line != "main" ]] && [[ $line != "master" ]]; then
-        git branch -d $line > /dev/null 2>&1
+        git branch -D $line > /dev/null 2>&1
         printf "\n    $red_fg[deleted] $line$reset"
         deletions=true
     elif [[ $line == $merge_branch ]]; then
