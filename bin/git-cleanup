@@ -186,12 +186,21 @@ git checkout origin/$merge_branch > /dev/null 2>&1
 # send list of merged branches into temp file
 git branch --merged > /tmp/git_cleanup_output 2>&1
 
+# also do best effort of detecting branches that have been squash-merged
+# (currently, this only works when $merge_branch does not have any new changes after the squash-merge)
+for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/)
+do
+    if [[ $branch != $merge_branch ]] && [[ $branch != "main" ]] && [[ $branch != "master" ]]; then
+        git diff --color=never `git merge-base origin/$merge_branch $branch`..$branch | git apply --reverse --check &> /dev/null && echo $branch >> /tmp/git_cleanup_output
+    fi
+done
+
 deletions=false
 merge_branch_merged=false
 while read line
 do
     is_real_branch=`git show-ref refs/heads/$line`
-    if [ -n "$is_real_branch" ] && [[ $line != $merge_branch ]] && [[ $line != "master" ]]; then
+    if [ -n "$is_real_branch" ] && [[ $line != $merge_branch ]] && [[ $line != "main" ]] && [[ $line != "master" ]]; then
         git branch -d $line > /dev/null 2>&1
         printf "\n    $red_fg[deleted] $line$reset"
         deletions=true
