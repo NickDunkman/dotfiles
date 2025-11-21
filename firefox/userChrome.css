@@ -1,0 +1,28 @@
+/**
+ * This file is used to add custom styles to Firefox's UI, such as adding
+ * pinned tab background colors.
+ *
+ * It's symlinked into each Firefox profile at:
+ *
+ *   <firefox profile>/chrome/userChrome.css
+ */
+
+:root {
+  --origin-color: #fcd5c2;
+  --personal-color: #a1dcfa;
+}
+
+/* Pinned tabs for Origin gmail & calendar */
+.tabbrowser-tab[pinned][label*="nick.dunkman@theoriginway.com - Origin Mail"]
+  .tab-background,
+.tabbrowser-tab[pinned][label*="Origin - Calendar"] .tab-background {
+  background-color: var(--origin-color) !important;
+  background-image: none !important;
+}
+
+/* Pinned tabs for personal gmail & calendar */
+.tabbrowser-tab[pinned][label*="nickdunkman@gmail.com - Gmail"] .tab-background,
+.tabbrowser-tab[pinned][label*="Google Calendar"] .tab-background {
+  background-color: var(--personal-color) !important;
+  background-image: none !important;
+}
