@@ -1,6 +1,6 @@
 // Can't use `const` here b/c this code is re-run on the back of the card, and
 // using `const` would cause an already-defined error.
-var vowelSounds = "aeiouhéàèùâêîôûëïü";
+var vowelSounds = "aeiouhéàèùâêîôûëïüœ";
 
 /**
  * Renders a definite article before some noun, based on the provided gender
