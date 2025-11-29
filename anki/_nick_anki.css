@@ -1,0 +1,295 @@
+:root {
+  --xs: 0.765em;   /* = 1 * .875 * .875 */
+  --sm: 0.875em;   /* = 1 * .875        */
+  --base: 20px;    /* = 1               */
+  --lg: 1.14em;    /* = 1 / .875        */
+  --xl: 1.31em;    /* = 1 / .875 / .875 */
+
+  --primary-color: rgb(232, 232, 232);
+  --secondary-color: rgba(232, 232, 232, 0.6);
+  --highlight-color: rgb(255, 79, 255);
+  --heading-color: rgb(119, 204, 255);
+  --secondary-heading-color: rgb(119, 204, 255, 0.85);
+  --code-color: rgb(124, 252, 1);
+
+  --male-color: var(--heading-color);
+  --female-color: var(--highlight-color);
+
+  --primary-bg-color: rgb(28, 28, 30);
+  --secondary-bg-color: rgb(255, 255, 255, 0.1);
+  --highlight-bg-color: rgba(93, 0, 255, 0.7);
+
+  --hr-color: rgb(119, 204, 255, 0.5);
+  --border: 1px solid #aaa !important;
+  --border-radius: 4px;
+}
+
+.card, .card.nightMode {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: var(--base);
+  text-align: center;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+}
+
+.inline {
+  display: inline;
+}
+
+h1, h2 {
+  font-size: var(--sm);
+  font-weight: 600;
+  color: var(--heading-color);
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4), 0px 0px 3px #111;
+}
+
+hr {
+  height: 3px;
+  border: none;
+  background-color: var(--hr-color);
+  margin: 35px 0;
+  padding: 0;
+}
+
+big { font-size: var(--lg); }
+small { font-size: var(--sm); }
+mute { opacity: 0.5; }
+
+b, .b {
+  font-weight: 600;
+  color: var(--highlight-color);
+}
+
+/* <i> is a shortcut for making secondary text, usually for an IPA character string */
+i { font-style: normal; font-weight: 300; color: var(--secondary-color); }
+i b, i .b { filter: grayscale(0.5); }
+
+/* secondary text should not be even smaller inside another <i> */
+i:where(i:not(i i)) { font-size: var(--sm); }
+
+/* secondary text should become italic inside another <i> */
+i i {
+  font-style: italic;
+}
+
+/* custom tag for <i> thin-ness */
+thin { font-weight: 300; }
+
+/* custom tag for <b> thick-ness */
+thick { font-weight: 600; }
+
+/* <u> is a shortcut for using monospace font, such as for spelling patterns */
+u {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: var(--sm);
+  text-decoration: none;
+  padding-left: 0.2em;
+  color: var(--code-color);
+}
+
+/* custom <flag> tag for making emoji flags pop against the dark background */
+flag {
+  font-size: 1.3em;
+  position: relative;
+  top: 0.1em;
+  color: var(--primary-color);
+}
+
+/*******************************************************************************
+Tables
+*******************************************************************************/
+
+table {
+  min-width: 50%;
+  margin: 30px auto;
+  table-layout: fixed;
+  font-size: var(--sm);
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 7px 10px;
+  text-align: left;
+  border-right: var(--border);
+  border-top: var(--border);
+}
+
+th {
+  background-color: var(--secondary-bg-color);
+  border-top: var(--border);
+  font-weight: 500;
+  color: var(--secondary-heading-color);
+}
+
+td:first-child, th:first-child {
+  border-left: var(--border);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th { border-bottom: var(--border); }
+thead tr:not(:last-child) th { text-align: center; }
+thead tr:first-child th:empty {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+}
+
+ol, ul {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px auto;
+}
+
+/*******************************************************************************
+Gender symbols
+*******************************************************************************/
+
+gender::before {
+  content: "⚤";
+  display: inline;
+  font-weight: bold;
+  position: relative;
+  top: -2px;
+
+  background-image: linear-gradient(to top right, var(--female-color), var(--male-color));
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+gender[f]::before,
+gender[ff]::before {
+  content: "♀";
+  color: var(--female-color);
+}
+
+gender[m]::before,
+gender[mm]::before {
+  content: "♂";
+  color: var(--male-color);
+}
+
+/*******************************************************************************
+Boxes
+*******************************************************************************/
+
+.boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+.box.focused {
+  background-color: var(--highlight-bg-color);
+  transform: scale(1.1);
+}
+
+/*******************************************************************************
+Secrets -- e.g. showing the english translation for a french word. Hidden by
+default, but JS will show it when you click/tap on the parent.
+*******************************************************************************/
+
+secret {
+  display: none;
+}
+
+/*******************************************************************************
+Image Boxes
+*******************************************************************************/
+
+imgs {
+  display: inline-flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  width: 375px;
+  background: var(--secondary-bg-color);
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: var(--sm);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+imgs img {
+  max-height: 185px;
+}
+
+imgs img:first-of-type:last-of-type {
+  max-height: 375px;
+}
+
+.image-box-image {
+  width: calc(50% - 2.5px);
+  line-height: 1px;
+}
+
+.image-box-image:first-of-type:last-of-type {
+  width: 100%;
+}
+
+.image-box-image img {
+  max-height: 185px;
+  object-fit: contain;
+  border: 2px solid var(--primary-bg-color);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+}
+
+.image-box-image:first-of-type:last-of-type img {
+  max-height: 375px;
+}
+
+imgs secret {
+  width: 100%;
+}
+
+small imgs {
+  width: 200px;
+  padding: 5px;
+}
+
+small .image-box-image img {
+  max-height: 97.5px;
+}
+
+small .image-box-image:first-of-type:last-of-type img {
+  max-height: 200px;
+}
+
+/*******************************************************************************
+Echo -- such as to highlight plurality of a question
+*******************************************************************************/
+
+echo {
+  display: flex;
+  flex-direction: column;
+}
+
+echo > *:nth-last-child(2) {
+  opacity: 0.75;
+  transform: scale(0.9);
+  filter: brightness(0.8);
+  margin-top: -0.5em;
+}
+
+echo > *:nth-last-child(1) {
+  opacity: 0.5;
+  transform: scale(0.8);
+  filter: brightness(0.64);
+  margin-top: -0.6em;
+}
+
+echo.inline {
+  display: inline-flex;
+}
