@@ -7,4 +7,3 @@ if [ "$already_running_count" -lt 1 ]; then
     # terminal is closed.
     nohup fswatch -o $DOTFILES/firefox | xargs -n1 -I{} $DOTFILES/firefox/install.sh 2>&1 &!
 fi
-
