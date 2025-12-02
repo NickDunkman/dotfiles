@@ -1,4 +1,5 @@
 tap "phrase/brewed"
+
 brew "autojump"
 brew "awscli"
 brew "coreutils"
@@ -17,6 +18,7 @@ brew "pipx"
 brew "postgresql@15"
 brew "pyenv"
 brew "zplug"
+
 cask "1password"
 cask "1password-cli"
 cask "alfred"
@@ -37,16 +39,18 @@ cask "font-meslo-for-powerline"
 cask "google-chrome"
 cask "gpg-suite"
 cask "iterm2"
+cask "kap"
 cask "linear-linear"
 cask "notion"
-cask "kap"
 cask "reflex-app"
+cask "raycast"
 cask "slack"
 cask "sketch"
 cask "sourcetree"
 cask "spotify"
 cask "visual-studio-code"
 cask "zoom"
+
 mas "ColorSlurp", id: 1287239339
 mas "Drafts", id: 1435957248
 mas "NotePlan - To-Do List & Notes", id: 1505432629
