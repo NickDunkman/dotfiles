@@ -16,7 +16,7 @@
   --female-color: var(--highlight-color);
 
   --primary-bg-color: rgb(28, 28, 30);
-  --secondary-bg-color: rgb(255, 255, 255, 0.1);
+  --secondary-bg-color: rgba(119, 204, 255, 0.1);
   --highlight-bg-color: rgba(93, 0, 255, 0.7);
 
   --hr-color: rgb(119, 204, 255, 0.5);
@@ -36,7 +36,8 @@
   display: inline;
 }
 
-h1, h2 {
+/* Only one heading style, various sizes used for semantics only */
+h1, h2, h3, h4, h5, h6 {
   font-size: var(--sm);
   font-weight: 600;
   color: var(--heading-color);
@@ -94,6 +95,30 @@ flag {
   top: 0.1em;
   color: var(--primary-color);
 }
+
+/*******************************************************************************
+Deck titles
+*******************************************************************************/
+
+deck {
+  display: inline-block;
+  background: var(--secondary-bg-color);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  color: rgba(119, 204, 255, 0.75);
+  font-size: var(--xs);
+}
+
+deck flag {
+  font-size: 2rem;
+  line-height: 0.5rem;
+  position: relative;
+  top: 0.35rem;
+}
+
+deck flag:first-child { margin-right: 0.25em; }
+deck flag:last-child { margin-left: 0.25em; }
 
 /*******************************************************************************
 Tables

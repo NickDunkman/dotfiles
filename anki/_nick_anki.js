@@ -2,6 +2,17 @@
 // using `const` would cause an already-defined error.
 var vowelSounds = "aeiouhéàèùâêîôûëïüœ";
 
+function deckTitles() {
+  Array.from(document.getElementsByTagName("deck")).forEach((deck) => {
+    if (!deck.querySelector("flag")) {
+      const flag = deck.getAttribute("flag");
+      if (flag) {
+        deck.innerHTML = `<flag>${flag}</flag> ${deck.innerHTML} <flag>${flag}</flag>`;
+      }
+    }
+  });
+}
+
 /**
  * Renders a definite article before some noun, based on the provided gender
  * & plurality. (automatically handles using "l’" before vowel sounds, for
@@ -124,8 +135,27 @@ function je() {
   });
 }
 
+deckTitles();
 definiteArticles();
 secrets();
 imageBoxes();
 echos();
 je();
+
+// ***************************************************************************
+// Utilities
+// ***************************************************************************
+
+function charIsEmoji(char) {
+  // Regular emojis
+  if (/\p{Emoji}/u.test(char)) {
+    return true;
+  }
+
+  // Flags
+  if (/[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]/u.test(char)) {
+    return true;
+  }
+
+  return false;
+}
