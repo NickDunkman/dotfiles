@@ -5,4 +5,9 @@ fi
 brew update
 brew bundle --file=$DOTFILES/homebrew/Brewfile
 brew upgrade
-mas upgrade
+
+outdated_apps=$(mas outdated)
+if [ -n "$outdated_apps" ]; then
+  echo "there are app store apps to upgrade! requires password ..."
+  mas upgrade
+fi
