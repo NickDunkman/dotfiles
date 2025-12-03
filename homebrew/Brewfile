@@ -21,6 +21,7 @@ brew "zplug"
 
 cask "1password"
 cask "1password-cli"
+cask "adobe-creative-cloud"
 cask "alfred"
 cask "anki"
 cask "bluesnooze"
