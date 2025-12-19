@@ -27,28 +27,47 @@ if [ -z $head_branch ]; then
     fatal_error "could not parse a \$merge_branch"
 fi
 
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
 usage="
-usage: $program_name [help|-h|--help]
+\"$program_name\" rebases against the origin/$head_branch branch!
 
-Description:
+usage: for normal rebasing $current_branch onto origin/$head_branch:
 
-    \"$program_name\" rebases against the HEAD branch:
+    $program_name [help|-h|--help]
 
-        git rebase origin/$head_branch
+usage: when $current_branch was branched off another branch which was squash-merged into origin/$head_branch, do this to avoid unnecessary conflicts:
+
+    $program_name <last-commit-sha1-in-the-squashed-branch>
 "
 
-for option in $@
-do
-    case $option in
-      -h|--help|help)
-          echo "$usage"
-          exit 0 
-          ;;
-      *)
-          option_name=${option/=*/""}
-          fatal_error "invalid option: $option_name"
-    esac
+# Optional first positional argument: git SHA
+squashed_sha=""
+if [[ $# -gt 0 && "$1" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+  squashed_sha="$1"
+  shift
+fi
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help|help)
+      echo "$usage"
+      exit 0
+      ;;
+    --*=*)
+      option_name=${1%%=*}
+      fatal_error "invalid option: $option_name"
+      ;;
+    -*)
+      fatal_error "invalid option: $1"
+      ;;
+    *)
+      fatal_error "unexpected argument: $1"
+      ;;
+  esac
+  shift
 done
+
 
 # There cannot be any uncommitted changes on current branch. Untracked files are allowed.
 git diff --quiet HEAD
@@ -56,4 +75,8 @@ if [ $? -ne 0 ]; then
     fatal_error "you have uncommitted changes, aborting"
 fi
 
-git rebase --rebase-merges origin/$head_branch
+if [ -n "$squashed_sha" ]; then
+  git rebase --rebase-merges --onto origin/$head_branch $squashed_sha
+else
+  git rebase --rebase-merges origin/$head_branch
+fi
