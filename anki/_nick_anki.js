@@ -114,6 +114,79 @@ function echos() {
 }
 
 /**
+ * Conjugates a regular verb in the present tense.
+ *
+ *   <present verb="mange" object="nous" /> -> mangeons
+ *   <present verb="finir" object="je" /> -> finis
+ *   <present verb="vendre" object="ils" /> -> vendent
+ */
+function presentVerbConjugation() {
+  Array.from(document.getElementsByTagName("present")).forEach((present) => {
+    const verb = present.getAttribute("verb");
+    const object = present.getAttribute("object");
+
+    if (!verb || !object) {
+      return;
+    }
+
+    const stem = verb.slice(0, -2); // remove -er, -ir, or -re
+    const ending = verb.slice(-2);
+
+    let conjugation = "";
+    if (ending === "er") {
+      if (
+        object === "je" ||
+        object === "il" ||
+        object === "elle" ||
+        object === "on"
+      ) {
+        conjugation = `${stem}e`;
+      } else if (object === "tu") {
+        conjugation = `${stem}es`;
+      } else if (object === "nous") {
+        if (stem.endsWith("g")) {
+          conjugation = `${stem}eons`;
+        } else if (stem.endsWith("c")) {
+          conjugation = `${stem.slice(0, -1)}çons`;
+        } else {
+          conjugation = `${stem}ons`;
+        }
+      } else if (object === "vous") {
+        conjugation = `${stem}ez`;
+      } else if (object === "ils" || object === "elles") {
+        conjugation = `${stem}ent`;
+      }
+    } else if (ending === "ir") {
+      if (object === "je" || object === "tu") {
+        conjugation = `${stem}is`;
+      } else if (object === "il" || object === "elle" || object === "on") {
+        conjugation = `${stem}it`;
+      } else if (object === "nous") {
+        conjugation = `${stem}issons`;
+      } else if (object === "vous") {
+        conjugation = `${stem}issez`;
+      } else if (object === "ils" || object === "elles") {
+        conjugation = `${stem}issent`;
+      }
+    } else if (ending === "re") {
+      if (object === "je" || object === "tu") {
+        conjugation = `${stem}s`;
+      } else if (object === "il" || object === "elle" || object === "on") {
+        conjugation = `${stem}`;
+      } else if (object === "nous") {
+        conjugation = `${stem}ons`;
+      } else if (object === "vous") {
+        conjugation = `${stem}ez`;
+      } else if (object === "ils" || object === "elles") {
+        conjugation = `${stem}ent`;
+      }
+    }
+
+    present.innerHTML = conjugation;
+  });
+}
+
+/**
  * Adds "je" to the start of a <je> tag, or just "j'" if the first character
  * is a vowel sound.
  *
@@ -140,6 +213,7 @@ definiteArticles();
 secrets();
 imageBoxes();
 echos();
+presentVerbConjugation();
 je();
 
 // ***************************************************************************
