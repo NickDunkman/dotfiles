@@ -81,7 +81,7 @@ function secrets() {
         event.preventDefault();
         event.stopPropagation();
         secret.style.display = "block";
-      })
+      }),
     );
   });
 }
@@ -116,34 +116,46 @@ function echos() {
 /**
  * Conjugates a regular verb in the present tense.
  *
- *   <present verb="mange" object="nous" /> -> mangeons
- *   <present verb="finir" object="je" /> -> finis
- *   <present verb="vendre" object="ils" /> -> vendent
+ *   <present subject="nous" verb="mange" /> -> mangeons
+ *   <present subject="je" verb="finir" /> -> finis
+ *   <present subject="ils" verb="vendre" /> -> vendent
  */
 function presentVerbConjugation() {
   Array.from(document.getElementsByTagName("present")).forEach((present) => {
     const verb = present.getAttribute("verb");
-    const object = present.getAttribute("object");
+    const subject = present.getAttribute("subject");
 
-    if (!verb || !object) {
+    if (!verb || !subject) {
       return;
     }
 
-    const stem = verb.slice(0, -2); // remove -er, -ir, or -re
     const ending = verb.slice(-2);
+
+    let stem;
+    if (
+      (verb.endsWith("ayer") ||
+        verb.endsWith("oyer") ||
+        verb.endsWith("uyer")) &&
+      subject !== "nous" &&
+      subject !== "vous"
+    ) {
+      stem = verb.slice(0, -3) + "i"; // change y to i
+    } else {
+      stem = verb.slice(0, -2);
+    }
 
     let conjugation = "";
     if (ending === "er") {
       if (
-        object === "je" ||
-        object === "il" ||
-        object === "elle" ||
-        object === "on"
+        subject === "je" ||
+        subject === "il" ||
+        subject === "elle" ||
+        subject === "on"
       ) {
         conjugation = `${stem}e`;
-      } else if (object === "tu") {
+      } else if (subject === "tu") {
         conjugation = `${stem}es`;
-      } else if (object === "nous") {
+      } else if (subject === "nous") {
         if (stem.endsWith("g")) {
           conjugation = `${stem}eons`;
         } else if (stem.endsWith("c")) {
@@ -151,33 +163,33 @@ function presentVerbConjugation() {
         } else {
           conjugation = `${stem}ons`;
         }
-      } else if (object === "vous") {
+      } else if (subject === "vous") {
         conjugation = `${stem}ez`;
-      } else if (object === "ils" || object === "elles") {
+      } else if (subject === "ils" || subject === "elles") {
         conjugation = `${stem}ent`;
       }
     } else if (ending === "ir") {
-      if (object === "je" || object === "tu") {
+      if (subject === "je" || subject === "tu") {
         conjugation = `${stem}is`;
-      } else if (object === "il" || object === "elle" || object === "on") {
+      } else if (subject === "il" || subject === "elle" || subject === "on") {
         conjugation = `${stem}it`;
-      } else if (object === "nous") {
+      } else if (subject === "nous") {
         conjugation = `${stem}issons`;
-      } else if (object === "vous") {
+      } else if (subject === "vous") {
         conjugation = `${stem}issez`;
-      } else if (object === "ils" || object === "elles") {
+      } else if (subject === "ils" || subject === "elles") {
         conjugation = `${stem}issent`;
       }
     } else if (ending === "re") {
-      if (object === "je" || object === "tu") {
+      if (subject === "je" || subject === "tu") {
         conjugation = `${stem}s`;
-      } else if (object === "il" || object === "elle" || object === "on") {
+      } else if (subject === "il" || subject === "elle" || subject === "on") {
         conjugation = `${stem}`;
-      } else if (object === "nous") {
+      } else if (subject === "nous") {
         conjugation = `${stem}ons`;
-      } else if (object === "vous") {
+      } else if (subject === "vous") {
         conjugation = `${stem}ez`;
-      } else if (object === "ils" || object === "elles") {
+      } else if (subject === "ils" || subject === "elles") {
         conjugation = `${stem}ent`;
       }
     }
