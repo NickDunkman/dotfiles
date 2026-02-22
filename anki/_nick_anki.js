@@ -122,7 +122,8 @@ function echos() {
  */
 function presentVerbConjugation() {
   Array.from(document.getElementsByTagName("present")).forEach((present) => {
-    const verb = present.getAttribute("verb");
+    const verb = present.getAttribute("verb").replace(/^se /, "");
+    const reflexive = verb !== present.getAttribute("verb");
     const subject = present.getAttribute("subject");
 
     if (!verb || !subject) {
@@ -142,6 +143,34 @@ function presentVerbConjugation() {
       stem = verb.slice(0, -3) + "i"; // change y to i
     } else {
       stem = verb.slice(0, -2);
+    }
+
+    if (
+      subject === "je" ||
+      subject === "tu" ||
+      subject === "il" ||
+      subject === "elle" ||
+      subject === "on"
+    ) {
+      if (
+        [
+          "appeler",
+          "chanceler ",
+          "épeler",
+          "rappeler",
+          "renouveler",
+          "ruisseler",
+          "feuilleter",
+          "hoqueter",
+          "jeter",
+          "projeter",
+          "rejeter",
+        ].includes(verb)
+      ) {
+        stem += stem.slice(-1);
+      } else if (stem.slice(-2, -1) === "e" || stem.slice(-2, -1) === "é") {
+        stem = stem.slice(0, -2) + "è" + stem.slice(-1);
+      }
     }
 
     let conjugation = "";
@@ -191,6 +220,29 @@ function presentVerbConjugation() {
         conjugation = `${stem}ez`;
       } else if (subject === "ils" || subject === "elles") {
         conjugation = `${stem}ent`;
+      }
+    }
+
+    if (reflexive) {
+      const startsWithVowelSound = vowelSounds.includes(
+        conjugation[0]?.toLowerCase(),
+      );
+      if (subject === "je") {
+        conjugation = `${startsWithVowelSound ? "m’" : "me "} ${conjugation}`;
+      } else if (subject === "tu") {
+        conjugation = `${startsWithVowelSound ? "t’" : "te "} ${conjugation}`;
+      } else if (
+        subject === "il" ||
+        subject === "elle" ||
+        subject === "on" ||
+        subject === "ils" ||
+        subject === "elles"
+      ) {
+        conjugation = `${startsWithVowelSound ? "s’" : "se "} ${conjugation}`;
+      } else if (subject === "nous") {
+        conjugation = `nous ${conjugation}`;
+      } else if (subject === "vous") {
+        conjugation = `vous ${conjugation}`;
       }
     }
 
