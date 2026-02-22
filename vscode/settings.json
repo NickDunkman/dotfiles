@@ -10,7 +10,7 @@
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
   "javascript.validate.enable": false,
-  "[typescript][typescriptreact][javascript][javascriptreact][scss]": {
+  "[typescript][typescriptreact][javascript][javascriptreact][scss][css][postcss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.rulers": [80]
   },
