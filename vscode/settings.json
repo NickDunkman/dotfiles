@@ -12,13 +12,13 @@
   "javascript.validate.enable": false,
   "[typescript][typescriptreact][javascript][javascriptreact][scss][css][postcss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [80]
+    "editor.rulers": [80],
   },
   "editor.guides.bracketPairs": "active",
   "editor.bracketPairColorization.enabled": true,
   "explorer.autoReveal": false,
   "editor.unicodeHighlight.allowedCharacters": {
-    "’": true
+    "’": true,
   },
   "gitlens.codeLens.enabled": false,
   "http.systemCertificates": false,
@@ -29,5 +29,6 @@
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "editor.defaultColorDecorators": "always"
+  "editor.defaultColorDecorators": "always",
+  "claudeCode.preferredLocation": "panel",
 }

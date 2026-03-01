@@ -10,6 +10,7 @@ code \
      --install-extension arcanis.vscode-zipfs --force \
      --install-extension ashpowell.monokai-one-dark-vivid --force \
      --install-extension bradlc.vscode-tailwindcss --force \
+     --install-extension anthropic.claude-code --force \
      --install-extension csstools.postcss --force \
      --install-extension dbaeumer.vscode-eslint --force \
      --install-extension denoland.vscode-deno --force \
@@ -26,7 +27,6 @@ code \
      --install-extension mechatroner.rainbow-csv --force \
      --install-extension ms-azuretools.vscode-docker --force \
      --install-extension oderwat.indent-rainbow --force \
-     --install-extension openai.chatgpt --force \
      --install-extension orta.vscode-jest --force \
      --install-extension redhat.vscode-yaml --force \
      --install-extension shd101wyy.markdown-preview-enhanced --force \
@@ -36,4 +36,4 @@ code \
      --install-extension vscodevim.vim --force \
      --install-extension waderyan.gitblame --force \
      --install-extension yzhang.markdown-all-in-one --force
-
+     
