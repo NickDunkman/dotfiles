@@ -120,8 +120,13 @@ function highlights() {
       const word = highlight.getAttribute("word");
       if (word) {
         // Walk text nodes only — this naturally excludes tag names and attribute values.
-        const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        const regex = new RegExp(`(?<!\\p{L})${escapedWord}(?!\\p{L})`, "giu");
+        const escapedWords = word
+          .split(",")
+          .map((w) => w.trim())
+          .filter(Boolean)
+          .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+          .sort((a, b) => b.length - a.length); // longest first, so phrases match before sub-words
+        const regex = new RegExp(`(?<!\\p{L})(${escapedWords.join("|")})(?!\\p{L})`, "giu");
 
         const walker = document.createTreeWalker(
           highlight,
