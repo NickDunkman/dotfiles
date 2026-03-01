@@ -113,6 +113,61 @@ function echos() {
   });
 }
 
+/** Highlights a particular word of phrase within some content */
+function highlights() {
+  Array.from(document.getElementsByTagName("highlight")).forEach(
+    (highlight) => {
+      const word = highlight.getAttribute("word");
+      if (word) {
+        // Walk text nodes only — this naturally excludes tag names and attribute values.
+        const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp(`(?<!\\p{L})${escapedWord}(?!\\p{L})`, "giu");
+
+        const walker = document.createTreeWalker(
+          highlight,
+          NodeFilter.SHOW_TEXT,
+        );
+        const textNodes = [];
+        let node;
+        while ((node = walker.nextNode())) {
+          textNodes.push(node);
+        }
+
+        textNodes.forEach((textNode) => {
+          const text = textNode.nodeValue;
+          if (!regex.test(text)) {
+            regex.lastIndex = 0;
+            return;
+          }
+          regex.lastIndex = 0;
+
+          const fragment = document.createDocumentFragment();
+          let lastIndex = 0;
+          let match;
+          while ((match = regex.exec(text)) !== null) {
+            if (match.index > lastIndex) {
+              fragment.appendChild(
+                document.createTextNode(text.slice(lastIndex, match.index)),
+              );
+            }
+            const b = document.createElement("b");
+            b.textContent = match[0];
+            fragment.appendChild(b);
+            lastIndex = match.index + match[0].length;
+          }
+          if (lastIndex < text.length) {
+            fragment.appendChild(
+              document.createTextNode(text.slice(lastIndex)),
+            );
+          }
+
+          textNode.parentNode.replaceChild(fragment, textNode);
+        });
+      }
+    },
+  );
+}
+
 /**
  * Conjugates a regular verb in the present tense.
  *
@@ -279,6 +334,7 @@ imageBoxes();
 echos();
 presentVerbConjugation();
 je();
+highlights();
 
 // ***************************************************************************
 // Utilities
