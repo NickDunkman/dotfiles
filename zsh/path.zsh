@@ -1,6 +1,8 @@
 # Highest precedence first
 paths=(
   $DOTFILES/bin
+  $HOME/Library/Android/sdk/emulator
+  $HOME/Library/Android/sdk/platform-tools
   $FNM_MULTISHELL_PATH/bin
   $HOME/.yarn/bin
   $HOME/.pyenv/shims

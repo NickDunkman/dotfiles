@@ -17,12 +17,14 @@ brew "phrase"
 brew "pipx"
 brew "postgresql@15"
 brew "pyenv"
+brew "watchman"
 brew "zplug"
 
 cask "1password"
 cask "1password-cli"
 cask "adobe-creative-cloud"
 cask "alfred"
+cask "android-studio"
 cask "anki"
 cask "bluesnooze"
 cask "chatgpt"
@@ -51,6 +53,7 @@ cask "sourcetree"
 cask "spotify"
 cask "visual-studio-code"
 cask "zoom"
+cask "zulu@17"
 
 mas "ColorSlurp", id: 1287239339
 mas "Drafts", id: 1435957248
