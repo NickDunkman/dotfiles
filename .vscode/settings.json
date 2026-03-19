@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.md.symlink": "markdown",
+    "*.json.symlink": "json",
+    ".gitconfig.symlink": "properties"
+  }
+}
