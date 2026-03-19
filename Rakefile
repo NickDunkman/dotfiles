@@ -22,13 +22,20 @@ task :symlinks do
   skip_all = false
   overwrite_all = false
   backup_all = false
-  Dir.glob('*/**{.symlink}').each do |linkable|
+  Dir.glob('*/**/**.symlink', File::FNM_DOTMATCH).reject { |f| f.start_with?('.') }.each do |linkable|
     overwrite = false
     backup = false
 
-    file = File.basename(linkable).split('.')[0...-1].join('.')
-    target = "#{ENV["HOME"]}/.#{file}".strip
-    source = `echo "$PWD/#{linkable}"`.strip
+    parts = linkable.split('/')
+    # Everything after the first directory (topic folder) forms the target path
+    relative = parts[1..].join('/')
+    # Remove the .symlink extension
+    file = relative.sub(/\.symlink$/, '')
+    target = "#{ENV["HOME"]}/#{file}"
+    source = File.expand_path(linkable)
+
+    # Create parent directories if needed
+    FileUtils.mkdir_p(File.dirname(target))
 
     already_has_correct_linkage = false
     if File.symlink?(target)
@@ -47,7 +54,7 @@ task :symlinks do
         end
       end
       FileUtils.rm_rf(target) if overwrite || overwrite_all
-      `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
+      `mv "#{target}" "#{target}.backup"` if backup || backup_all
     end
 
     unless already_has_correct_linkage
@@ -61,13 +68,18 @@ task :dropbox_symlinks do
   skip_all = false
   overwrite_all = false
   backup_all = false
-  Dir.glob("#{ENV["HOME"]}/Dropbox/dotfiles/**{.symlink}").each do |linkable|
+  Dir.glob("#{ENV["HOME"]}/Dropbox/dotfiles/**/**.symlink", File::FNM_DOTMATCH).each do |linkable|
     overwrite = false
     backup = false
 
-    file = File.basename(linkable).split('.')[0...-1].join('.')
-    target = "#{ENV["HOME"]}/.#{file}".strip
-    source = `echo "#{linkable}"`.strip
+    # Strip the Dropbox dotfiles prefix to get the relative path
+    prefix = "#{ENV["HOME"]}/Dropbox/dotfiles/"
+    relative = linkable.sub(prefix, '')
+    file = relative.sub(/\.symlink$/, '')
+    target = "#{ENV["HOME"]}/#{file}"
+    source = linkable
+
+    FileUtils.mkdir_p(File.dirname(target))
 
     already_has_correct_linkage = false
     if File.symlink?(target)
@@ -86,7 +98,7 @@ task :dropbox_symlinks do
         end
       end
       FileUtils.rm_rf(target) if overwrite || overwrite_all
-      `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
+      `mv "#{target}" "#{target}.backup"` if backup || backup_all
     end
 
     unless already_has_correct_linkage

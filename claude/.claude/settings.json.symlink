@@ -1,0 +1,16 @@
+{
+  "allowedTools": [
+    {
+      "tool": "bash",
+      "arguments": {
+        "command": "npm info *"
+      }
+    },
+    {
+      "tool": "bash",
+      "arguments": {
+        "command": "npm view *"
+      }
+    }
+  ]
+}
