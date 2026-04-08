@@ -10,7 +10,7 @@
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
   "javascript.validate.enable": false,
-  "[typescript][typescriptreact][javascript][javascriptreact][scss][css][postcss]": {
+  "[typescript][typescriptreact][javascript][javascriptreact][scss][css][postcss][html][markdown][mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.rulers": [80],
   },
@@ -31,4 +31,5 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.defaultColorDecorators": "always",
   "claudeCode.preferredLocation": "panel",
+  "claudeCode.selectedModel": "opus",
 }
