@@ -10,7 +10,7 @@ pyenv global $GLOBAL_PYTHON_VERSION
 if ! type "poetry" > /dev/null; then
   pipx install poetry
 else
-  pipx upgrade poetry
+  pipx upgrade --pip-args="-q" poetry
 fi
 
 pyenv rehash
