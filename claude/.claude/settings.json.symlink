@@ -1,4 +1,29 @@
 {
+  "model": "sonnet[1m]",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/nickdunkman/Code/The-Origin-Way/aidev-at-origin/bootstrap/session-start-hook.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "expo@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "expo-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "expo/skills"
+      }
+    }
+  },
   "allowedTools": [
     {
       "tool": "bash",
@@ -12,5 +37,6 @@
         "command": "npm view *"
       }
     }
-  ]
+  ],
+  "advisorModel": "opus"
 }
