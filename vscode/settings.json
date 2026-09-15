@@ -7,7 +7,7 @@
     "**/__pycache__": true,
     "**/*.pyc": true,
     "**/.pytest_cache": true,
-    "**/.ruff_cache": true
+    "**/.ruff_cache": true,
   },
   "files.insertFinalNewline": true,
   "editor.copyWithSyntaxHighlighting": false,
@@ -18,16 +18,16 @@
   "javascript.validate.enable": false,
   "[typescript][typescriptreact][javascript][javascriptreact][scss][css][postcss][html][markdown][mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.rulers": [80]
+    "editor.rulers": [80],
   },
   "[python]": {
-    "editor.rulers": [100]
+    "editor.rulers": [100],
   },
   "editor.guides.bracketPairs": "active",
   "editor.bracketPairColorization.enabled": true,
   "explorer.autoReveal": false,
   "editor.unicodeHighlight.allowedCharacters": {
-    "’": true
+    "’": true,
   },
   "gitlens.codeLens.enabled": false,
   "http.systemCertificates": false,
@@ -35,10 +35,16 @@
   "vim.leader": ",",
   "explorer.confirmDelete": false,
   "workbench.editor.empty.hint": "hidden",
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.defaultColorDecorators": "always",
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "opus"
+  "claudeCode.selectedModel": "opus",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml",
+  ],
 }
