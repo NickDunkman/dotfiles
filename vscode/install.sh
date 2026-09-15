@@ -19,7 +19,6 @@ code \
      --install-extension eamodio.gitlens --force \
      --install-extension eriklynd.json-tools --force \
      --install-extension esbenp.prettier-vscode --force \
-     --install-extension github.copilot --force \
      --install-extension github.vscode-github-actions --force \
      --install-extension GraphQL.vscode-graphql --force \
      --install-extension GraphQL.vscode-graphql-syntax --force \
