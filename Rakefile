@@ -42,7 +42,7 @@ task :symlinks do
       already_has_correct_linkage = source == `readlink #{target}`.strip
     end
 
-    if !already_has_correct_linkage && (File.exists?(target) || File.symlink?(target))
+    if !already_has_correct_linkage && (File.exist?(target) || File.symlink?(target))
       unless skip_all || overwrite_all || backup_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
@@ -86,7 +86,7 @@ task :dropbox_symlinks do
       already_has_correct_linkage = source == `readlink #{target}`.strip
     end
 
-    if !already_has_correct_linkage && (File.exists?(target) || File.symlink?(target))
+    if !already_has_correct_linkage && (File.exist?(target) || File.symlink?(target))
       unless skip_all || overwrite_all || backup_all
         puts "File already exists: #{target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
         case STDIN.gets.chomp
