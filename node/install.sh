@@ -4,7 +4,10 @@ if [ ! -d /opt/homebrew/opt/fnm/bin ]; then
 fi
 
 # Install/update Node & NPM
-fnm install --lts
+LTS_VER=$(fnm list-remote --lts --latest | awk '{print $1}')
+if ! fnm list | grep -q "$LTS_VER"; then
+    fnm install --lts
+fi
 
 # corepack includes yarn!
 # to add more global installs, just tack onto the following line
